@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Providers({ icon, heading, date, href }) {
+export default function Card({ icon, heading, date, href, zip }) {
   return (
     <Link
       href={href}
@@ -11,7 +11,7 @@ export default function Providers({ icon, heading, date, href }) {
       <h1>{heading}</h1>
       <aside>
         <span>{date}</span>
-        <span></span>
+        <span>{zip}</span>
         <span></span>
       </aside>
     </Link>

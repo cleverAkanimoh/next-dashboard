@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <main className="w-full flex min-h-screen flex-col items-center p-24">
       <section className="container">
-
+        <Card />
       </section>
     </main>
   )
