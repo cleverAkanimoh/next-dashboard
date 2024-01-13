@@ -1,8 +1,14 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Open_Sans, Rubik } from 'next/font/google';
+import './globals.css';
+// import Providers from './ui/Provider';
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'],  variable: '--font-opensans', })
+
+const rubik = Rubik({
+  subsets: ['latin'],
+  variable: '--font-rubik',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +21,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    // <Providers>
+      <html lang="en">
+        <body className={`${openSans.variable} ${rubik.variable} font-rubik`}>{children}</body>
+      </html>
+    // </Providers>
   )
 }
