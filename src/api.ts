@@ -3,9 +3,9 @@ export const getAllRecords = async (id?: string) => {
 
   const response = await request.json();
 
-  const records = response.records;
+  const records = response.records.data;
 
-  id ? records.data.find((r: { ID: string }) => r.ID === id) : response;
+  id ? records.find((r: { ID: string }) => r.ID === id) : response;
 
   return records;
 };

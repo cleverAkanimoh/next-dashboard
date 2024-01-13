@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     // <Providers>
       <html lang="en">
-        <body className={`${openSans.variable} ${rubik.variable} font-rubik`}>{children}</body>
+        <body className={`${openSans.variable} ${rubik.variable} font-rubik bg-emerald-50`}>{children}</body>
       </html>
     // </Providers>
   )
