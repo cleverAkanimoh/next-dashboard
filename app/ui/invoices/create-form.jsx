@@ -12,7 +12,7 @@ import { Button } from '@/app/ui/button';
 import { createInvoice } from '@/app/lib/actions';
 import { useFormState } from 'react-dom';
 
-export default function Form({ customers }: { customers: CustomerField[] }) {
+export default function Form({ customers }) {
 
   const initialState = { message: null, errors: {}, loading: false };
   const [state, dispatch] = useFormState(createInvoice, initialState);
@@ -46,7 +46,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
           <div id="customer-error" aria-live="polite" aria-atomic="true">
             {state.errors?.customerId &&
-              state.errors.customerId.map((error: string) => (
+              state.errors.customerId.map((error) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
@@ -75,7 +75,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
           <div id="amount-error" aria-live="polite" aria-atomic="true">
             {state.errors?.amount &&
-              state.errors.amount.map((error: string) => (
+              state.errors.amount.map((error) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
@@ -128,7 +128,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         </fieldset>
         <div id="status-error" aria-live="polite" aria-atomic="true">
           {state.errors?.status &&
-            state.errors.status.map((error: string) => (
+            state.errors.status.map((error) => (
               <p className="mt-2 text-sm text-red-500" key={error}>
                 {error}
               </p>

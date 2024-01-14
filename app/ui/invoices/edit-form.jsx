@@ -15,13 +15,11 @@ import { useFormState } from 'react-dom';
 export default function EditInvoiceForm({
   invoice,
   customers,
-}: {
-  invoice: InvoiceForm;
-  customers: CustomerField[];
 }) {
   const initialState = { message: null, errors: {} };
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
   const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
+  console.log(state)
  
   return (
     <form action={dispatch}>
@@ -52,7 +50,7 @@ export default function EditInvoiceForm({
           </div>
           <div id="customer-error" aria-live="polite" aria-atomic="true">
             {state.errors?.customerId &&
-              state.errors.customerId.map((error: string) => (
+              state.errors.customerId.map((error) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
@@ -82,7 +80,7 @@ export default function EditInvoiceForm({
           </div>
            <div id="amount-error" aria-live="polite" aria-atomic="true">
             {state.errors?.amount &&
-              state.errors.amount.map((error: string) => (
+              state.errors.amount.map((error) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
@@ -136,7 +134,7 @@ export default function EditInvoiceForm({
         </fieldset>
         <div id="status-error" aria-live="polite" aria-atomic="true">
           {state.errors?.status &&
-            state.errors.status.map((error: string) => (
+            state.errors.status.map((error) => (
               <p className="mt-2 text-sm text-red-500" key={error}>
                 {error}
               </p>
